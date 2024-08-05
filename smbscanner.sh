@@ -3,7 +3,7 @@
 echo "Masscan-Enum4Linux"
 
 masscan -iL target.txt -p445 --rate 10000 >> out.txt
-sed 's/Discovered open port [0-9]*\/tcp on //g' out.txt > masmap.txt
+sed 's/Discovered open port [0-9]*\/tcp on //g' out.txt | tr -d ' ' > masmap.txt
 
 sleep 1
 
